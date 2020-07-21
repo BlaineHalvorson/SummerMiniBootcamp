@@ -1,7 +1,10 @@
 package com.gsu.project.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -9,7 +12,18 @@ import javax.persistence.Table;
 public class Project {
     @Id
     private int id;
-    private String projectName;
+	private String projectName;
+	
+	@OneToMany(mappedBy = "projectId")
+	private List<Task> taskList;
+
+	public List<Task> getTaskList() {
+		return this.taskList;
+	}
+
+	public void setTaskList(List<Task> taskList) {
+		this.taskList = taskList;
+	}
 
 	public int getId() {
 		return this.id;
