@@ -30,4 +30,10 @@ public class ProjectController {
     public void addProject(@RequestBody Project project){
         projectRepo.save(project);
     }
+
+    // PUT
+
+    // DELETE
+
+    // ADD SERVICE LAYER
 }
