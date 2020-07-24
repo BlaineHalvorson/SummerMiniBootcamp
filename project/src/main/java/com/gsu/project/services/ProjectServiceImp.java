@@ -1,10 +1,8 @@
 package com.gsu.project.services;
 
 import java.util.Optional;
-
 import com.gsu.project.models.Project;
 import com.gsu.project.repositories.ProjectRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProjectServiceImp implements ProjectService {
