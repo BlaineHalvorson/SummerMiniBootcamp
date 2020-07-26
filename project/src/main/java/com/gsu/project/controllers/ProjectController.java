@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProjectController {
 
     @Autowired
-    ProjectServiceImp projectService;
+    private ProjectServiceImp projectService;
 
     @Autowired
     private ProjectRepository projectRepo;
@@ -42,7 +42,6 @@ public class ProjectController {
         projectService.updateProject(id, project);
     }
     
-
     // DELETE
     @RequestMapping(value="/project/{id}", method=RequestMethod.DELETE)
     public void updateProject(@PathVariable int id) {

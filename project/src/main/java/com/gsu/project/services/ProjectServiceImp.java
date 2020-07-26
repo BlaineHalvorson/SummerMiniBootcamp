@@ -4,7 +4,8 @@ import java.util.Optional;
 import com.gsu.project.models.Project;
 import com.gsu.project.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Service;
+@Service
 public class ProjectServiceImp implements ProjectService {
 
     @Autowired
@@ -12,6 +13,7 @@ public class ProjectServiceImp implements ProjectService {
 
     @Override
     public void saveProject(Project project) {
+        // check if id exists, if yes, throw error, if no, add project
         projectRepo.save(project);
     }
 
