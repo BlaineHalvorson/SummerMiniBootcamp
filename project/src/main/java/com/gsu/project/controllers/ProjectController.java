@@ -31,20 +31,21 @@ public class ProjectController {
         return projectRepo.findAllByProjectNameContaining(name);
     }
 
+    // POST
     @RequestMapping(value = "/projects", method = RequestMethod.POST)
     public void addProject(@RequestBody Project project){
         projectService.saveProject(project);
     }
 
     // PUT
-    @RequestMapping(value="/projects", method=RequestMethod.PUT)
+    @RequestMapping(value="/projects/{id}", method=RequestMethod.PUT)
     public void updateProject(@PathVariable int id, @RequestBody Project project) {
         projectService.updateProject(id, project);
     }
     
     // DELETE
-    @RequestMapping(value="/project/{id}", method=RequestMethod.DELETE)
-    public void updateProject(@PathVariable int id) {
+    @RequestMapping(value="/projects/{id}", method=RequestMethod.DELETE)
+    public void deleteProject(@PathVariable int id) {
         projectService.deleteProject(id);
     }
 }
