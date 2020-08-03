@@ -23,6 +23,7 @@ public class TaskServiceImp implements TaskService {
         Optional<Task> taskOptional = taskRepo.findById(id);
         if (taskOptional.isPresent()) {
             task.setId(taskOptional.get().getId());
+            // task.setProjectId(taskOptional.get;
             taskRepo.save(task);
         }
     }
